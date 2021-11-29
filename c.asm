@@ -1,5 +1,8 @@
 ORG 0
-TIMES 512 - 64 - ($-$$) NOP
+mov ah, 0xe
+mov al, '!'
+int 16
+TIMES 512 - 8 - 64 NOP
 DB 0x80
 DB 0
 DB 2
@@ -71,11 +74,3 @@ DB 5
 
 DB 0x55
 DB 0xAA
-A:
-TIMES 512 NOP
-B:
-TIMES 512 NOP
-C:
-TIMES 512 NOP
-D:
-TIMES 512 NOP
